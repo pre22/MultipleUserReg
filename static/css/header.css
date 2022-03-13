@@ -1,0 +1,68 @@
+/* HEADER ************************************************** */
+header{
+	background-color: #e2e2e2;
+	padding: 80px;
+	position: relative;
+	background-image: url('../images/students.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center 20%;
+}
+header::before{	
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-color: rgba(0, 168, 89, .7);
+}
+header>*{
+	z-index: 2;
+	position: relative;
+}
+
+header .breadcrumbs .link{
+	color: #fff;
+	font-size: 0.85rem;
+	transition: all .2s;
+	position: relative;
+}
+header .breadcrumbs .link::after {
+	content: '';
+	background-color: #fff;
+	height: 2px;
+	width: 0;
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+	transition: all .2s;
+}
+header .breadcrumbs .link:hover::after {
+	width: 100%;
+}
+header .breadcrumbs i{
+	color: #fff;
+	font-size: 0.80rem;
+}
+header h1{
+	color: #fff;
+	font-size: 2.5rem;
+	font-weight: 600;
+	margin-top: 15px;
+}
+
+@media all and (max-width: 991px){
+	/* HEADER ************************************************** */
+	header{
+		padding: 80px 10px;
+	}
+}
+
+@media all and (max-width: 767px){
+	header h1{
+		font-size: 2rem;
+		margin-top: 5px;
+	}
+}

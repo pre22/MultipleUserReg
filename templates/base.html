@@ -1,0 +1,289 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %} MySureBiz {% endblock title %}</title>
+
+	{% block stylesheets %}
+	<link rel="stylesheet" href="{% static 'assets/bootstrap-5.0.0/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/fontawesome-5.15.3/css/all.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/slick-1.8.1/slick/slick.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/slick-1.8.1/slick/slick-theme.css' %}">
+	<link rel="stylesheet" href="{% static 'css/general.css' %}">
+	{% endblock stylesheets %}
+</head>
+
+<body>
+	<nav id="desktopNav">
+		<div class="top-row d-flex justify-content-between align-items-center">
+			<span id="logo">
+				<a href="{% url 'home' %}">
+					<img src="{% static 'images/mysurebizlogo-sm.png' %}" alt="MySureBiz logo">
+				</a>
+			</span>
+			<div class="menu">
+				<a href="{% url 'goals' %}" class="menu-item">Our Goals</a>
+				<a href="{% url 'faq' %}" class="menu-item">FAQ</a>
+			</div>
+		</div>
+		<ul class="main-menu d-flex align-items-stretch">
+			<li class="menu-item active">
+				<a href="{% url 'home' %}">Home</a>
+			</li>
+
+			{% for navs in navmenu %}
+			<li class="menu-item has-dropdown">
+				<a href="{{ navs.link }}">{{ navs.title }}</a>
+
+				<div class="menu-dropdown">
+					<div class="dropdown-menu-header">
+						<span class="text"></span>
+					</div>
+					<div class="dropdown-menu-body d-flex">
+						{% for each_submenu_data in SubMenu_Model %}
+						{% if each_submenu_data.menu.title == navs.title %}
+						<ul class="dropdown-menu-items">
+							<li class="dropdown-menu-item"><a href="{{ navs.link|add:each_submenu_data.link }}">{{ each_submenu_data.title }}</a>
+							</li>
+						</ul>
+						{% endif %}
+						{% endfor %}
+
+						{% if media_item %}
+						<div class="img-section">
+							{% if media_item.menu.title == navs.title %}
+							<img src="{{ media_item.menu_item_p.url }}" alt="" class="w-100">
+							<span class="text">{{ media_item.description }}</span>
+							{% endif %}
+						</div>
+						{% endif %}
+					</div>
+				</div>
+			</li>
+			{% endfor %}
+
+			<li class="menu-item">
+				<a href="">Register</a>
+			</li>
+			<li class="menu-item">
+				<a href="3">Login</a>
+			</li>
+		</ul>
+	</nav>
+
+	<nav id="mobileNav" class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="{% url 'home' %}">
+				<span id="logo">
+					<img src="{% static 'images/mysurebizlogo-sm.png' %}" alt="MySureBiz logo">
+				</span>
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+					</li>
+					{% for navs in navmenu %}
+
+					<li class="nav-item">
+						<a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false">{{ navs.title }}</a>
+						<ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+							{% for navitem in submenu %}
+							<li><a href="msme-support.html" class="dropdown-item">{{ navitem.title }}</a></li>
+							{% endfor %}
+						</ul>
+					</li>
+					{% endfor %}
+				</ul>
+				<span class="divider"></span>
+				<div class="menu">
+					<a href="{% url 'goals' %}" class="menu-item">Our Goals</a>
+					<a href="{% url 'faq' %}" class="menu-item">FAQ</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- Contents in the child pages will be appended within the block content -->
+	{% block content %}
+
+	{% endblock content %}
+
+	<footer class="col-12">
+		<div class="inner row g-0">
+			<section id="address" class="col-lg-3 col-md-6 mb-sm-3">
+				<div class="logo">
+					<img src="{{ footers.logo.url }}" alt="MySureBiz logo">
+				</div>
+				<div class="item d-flex">
+					<i class="fas fa-map"></i>
+					<span class="text">
+						{{ footers.address }}
+					</span>
+				</div>
+				<div class="item link d-flex">
+					<i class="fas fa-phone-alt"></i>
+					<a href="tel:+2348030812841" class="text">{{ footers.phone }}</a>
+				</div>
+				<div class="item link d-flex">
+					<i class="fas fa-paper-plane"></i>
+					<a href="mailto:mysurebizmails@gmail.com" class="text">{{ footers.email }}</a>
+				</div>
+			</section>
+
+			<section id="links" class="col-lg-3 col-md-6 mt-md-2 mt-sm-0">
+				<h3>Quick Links</h3>
+				<ul>
+					{% for navs in navmenu %}
+					<li class="link">
+						<i class="fas fa-user-plus"></i>
+						<a href="register.html">{{ navs.title }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</section>
+
+			<section id="companyVision" class="col-lg-6 col-md-12 mt-md-3">
+				<h3>Our Vision</h3>
+				<p>
+					{{ footers.v_body }}
+				</p>
+				<!-- <p>
+					Voluptatibus voluptates amet accusantium at sequi ad natus mollitia
+					culpa.
+				</p> -->
+			</section>
+		</div>
+
+		<section id="copyright">
+			&copy;Copyright <span class="year"></span> MySureBiz. All rights reserved.
+		</section>
+	</footer>
+
+	<script src="{% static 'assets/jquery-3.5.1.min.js' %}"></script>
+	<script src="{% static 'assets/bootstrap-5.0.0/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/nav.js' %}"></script>
+	<script src="{% static 'assets/slick-1.8.1/slick/slick.min.js' %}"></script>
+	<script src="{% static 'assets/clamp.js' %}"></script>
+	<script src="{% static 'assets/jquery-3.5.1.min.js' %}"></script>
+	<script src="{% static 'assets/bootstrap-5.0.0/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/nav.js' %}"></script>
+	<script src="{% static 'assets/slick-1.8.1/slick/slick.min.js' %}"></script>
+	<script src="{% static 'assets/clamp.js' %}"></script>
+	<script>
+		// TRUNCATE LONG BLOG TITLE INTO 3 LINES
+		for (let title of document.querySelectorAll(".blog-post .title")) {
+			$clamp(title, { clamp: 3 });
+		}
+
+
+		//SLICK SLIDER FOR TESTIMONIAL AND PARTNERS SECTIONS
+		$("#testimonials .inner").slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			adaptiveHeight: true,
+			swipeToSlide: true,
+			arrows: false,
+			responsive: [
+				{
+					breakpoint: 991,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					}
+				},
+			]
+		});
+
+		$("#partners .inner").slick({
+			slidesToShow: 5,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 3000,
+			pauseOnHover: false,
+			pauseOnFocus: false,
+			arrows: false,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 3,
+					}
+				},
+			],
+		});
+
+		//SLICK SLIDER FOR BLOG SECTION
+		$("#blog .inner").slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			swipeToSlide: true,
+			arrows: true,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 2,
+					}
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 1,
+					}
+				},
+			]
+		});
+
+
+		//SET HEIGHT OF BLOG IMAGE TO MAINTAIN ASPECT RATIO AND UNIFORMITY
+		function setHeight() {
+			const imgContainers = document.querySelectorAll(".blog-post .img");
+
+			let smallestWidth;
+			for (let i = 0; i < imgContainers.length; i++) {
+				if (i === 0)
+					smallestWidth = imgContainers[i].clientWidth;
+				else {
+					let width = imgContainers[i].clientWidth;
+
+					if (width < smallestWidth)
+						smallestWidth = width;
+				}
+			}
+
+			let height = (smallestWidth / 3) * 2;
+
+			for (let i = 0; i < imgContainers.length; i++) {
+				imgContainers[i].style.overflow = "hidden";
+				imgContainers[i].style.height = height + "px";
+			}
+		}
+		setHeight();
+		document.body.onresize = setHeight;
+
+
+		// COPYRIGHT CURRENT YEAR
+		document.querySelector("#copyright .year").textContent = new Date().getFullYear();
+	</script>
+
+</body>
+
+</html>

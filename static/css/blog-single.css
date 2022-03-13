@@ -1,0 +1,176 @@
+@import url('nav.css');
+@import url('footer.css');
+
+main{
+	padding: 50px;
+}
+
+/* INTRO ******************************************** */
+#intro{
+	text-align: center;
+	padding: 0 8%;
+}
+#intro .title{
+	font-family: Georgia, serif;
+	font-size: 2rem;
+	font-weight: 600;
+	color: #222;
+	line-height: 1.3;
+	margin-bottom: 10px;
+	padding: 0 20px;
+}
+
+#intro .post-date{
+	display: table;
+	color: #222;
+	font-weight: 600;
+	margin: 0 auto;
+}
+#intro .share-post{
+	margin-top: 35px;
+}
+#intro .share-post > *{
+	display: inline-block;
+	margin-right: 50px;
+}
+#intro .share-post span{
+	text-transform: uppercase;
+	font-size: 0.85rem;
+	letter-spacing: 2px;
+}
+#intro .share-post i{
+	color: #222;
+	font-size: 1.1rem;
+	transition: all .4s ease-in-out;
+}
+#intro .share-post i:hover{
+	color: #00a859;
+}
+#intro .img{
+	margin-top: 30px;
+}
+#intro img{
+	width: 100%;
+}
+
+
+/* BLOG BODY ************************************************ */
+#body{
+	margin-top: 50px;
+	padding: 0 12%;
+}
+#body p{
+	line-height: 1.8;
+	font-size: 1.2rem;
+	margin-bottom: 30px;
+}
+
+#body h2,
+#body h3,
+#body h4,
+#body h5,
+#body h6{
+	font-weight: 600 !important;
+	margin-bottom: 30px;
+}
+#body h2{
+	font-size: 1.4rem;
+}
+#body h3{
+	font-size: 1.3rem;
+}
+#body h4{
+	font-size: 1.2rem;
+}
+#body h5{
+	font-size: 1.1rem;
+}
+#body h6{
+	font-size: 1rem;
+}
+
+#body figure{
+	text-align: center;
+	margin: 20px 0;
+}
+#body figure img{
+	max-width: 100%;
+}
+#body figure figcaption{
+	font-size: 0.9rem;
+	color: #888;
+}
+
+#body li::marker{
+	color: #00a859;
+}
+
+#body .blog-link{
+	color: #00a859;
+	border-bottom: 1.5px solid;
+}
+#body .blog-link:hover{
+	border-bottom: 3px solid;
+}
+
+#body .blog-link[target]::after{
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 1rem;
+	content: "\f35d";
+	color: #00a859;
+	margin-left: 5px;
+}
+
+
+@media all and (max-width: 991px){
+	main{
+		padding: 30px 15px;
+	}
+}
+
+@media all and (max-width: 991px){
+	#intro, #body{
+		padding: 0;
+	}
+
+	#intro .title{
+		font-size: 1.7rem;
+	}
+
+	#body p{
+		font-size: 1rem;
+	}
+	
+	#body h2{
+		font-size: 1.2rem;
+	}
+	#body h3{
+		font-size: 1.1rem;
+	}
+	#body h4{
+		font-size: 1rem;
+	}
+	#body h5{
+		font-size: 0.95rem;
+	}
+	#body h6{
+		font-size: 0.9rem;
+	}
+}
+
+@media all and (max-width: 425px){	
+
+	#intro .title{
+		padding: 0;
+		font-size: 1.4rem;
+	}
+	#intro .share-post{
+		padding: 0 10px;
+		display: flex;
+		justify-content: space-between;
+	}
+	#intro .share-post > *{
+		margin-right: 0;
+	}
+}

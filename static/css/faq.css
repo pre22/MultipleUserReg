@@ -1,0 +1,54 @@
+@import url('nav.css');
+@import url('footer.css');
+@import url('call-to-action.css');
+@import url('header.css');
+
+/* MAIN ************************************************** */
+main{
+	padding: 100px;
+}
+
+/* CATEGORIES ******************************************** */
+.categories .category-name{
+	display: block;
+	font-weight: 600;
+	color: #222;
+	margin-bottom: 5px;
+	transition: all .2s;
+}
+.categories .category-name.active,
+.categories .category-name:hover{
+	color: #00a859;
+}
+
+
+/* FAQS ************************************************** */
+.faqs .faq{
+	padding: 20px 0;
+	border-bottom: 1px solid #ccc;
+}
+.faqs .faq .top-row{	
+	cursor: pointer;
+}
+.faqs .faq .top-row i{
+	width: 30px;
+	color: #00a859;	
+}
+.faqs .faq .question{
+	font-weight: 600;	
+}
+
+.faqs .faq .answer{
+	display: none;
+	margin-left: 30px;
+	margin-top: 20px;
+}
+
+
+@media all and (max-width: 991px){
+	/* MAIN ***************************************************** */
+	main{
+		padding: 50px 20px;
+	}
+
+}

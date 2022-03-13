@@ -1,0 +1,56 @@
+@import url('nav.css');
+@import url('footer.css');
+@import url('call-to-action.css');
+@import url('header.css');
+
+
+/* MAIN ***************************************************** */
+main{
+	margin-top: 20px;
+	padding: 100px;
+}
+
+/* SECTIONS ************************************************** */
+main section{
+	width: 80%;
+}
+main section:not(main section:first-of-type){
+	margin-top: 100px;
+}
+main section h2{
+	color: #bbb;
+	font-size: 0.85rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin: 0;
+}
+main section span.subtitle{
+	color: #057a82;
+	font-size: 2rem;
+	font-weight: 600;
+	margin-bottom: 25px;
+	display: block;
+}
+main section p{
+	color: #222;
+	text-align: justify;
+}
+
+
+@media all and (max-width: 991px){
+	/* MAIN ***************************************************** */
+	main{
+		padding: 50px 10px;
+	}
+
+	/* SECTIONS ************************************************** */
+	main section{
+		width: 100%;
+	}
+}
+
+@media all and (max-width: 767px){
+	main section span.subtitle{
+		font-size: 1.5rem;
+	}
+}

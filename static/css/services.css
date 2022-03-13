@@ -1,0 +1,199 @@
+@import url('nav.css');
+@import url('footer.css');
+
+/* HEADER ***************************************************** */
+
+header{
+	position: relative;
+}
+header img{
+	width: 100%;
+}
+header .text{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+	width: 520px;
+	height: 100%;
+	background-color: rgba(255, 255, 255, .7);
+	padding: 0 50px ;
+	text-align: right;
+}
+header .text.left{
+	left: 80px;
+}
+header .text.right{
+	right: 80px;
+}
+header .text h1{
+	font-size: 2rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: #333;
+	margin-bottom: 15px;
+}
+header .text h1::first-line{
+	color: #f58634;
+}
+header .text .subtitle{
+	display: block;
+	font-size: 0.9rem;
+	color: #333;
+}
+header .text .btn{
+	display: inline-block;
+	margin-top: 25px;
+	background-color: #f58634;
+	color: #fff;
+	font-size: 0.8rem;
+	border-radius: 0;
+	text-transform: uppercase;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+
+/* MAIN ************************************************ */
+
+main{
+	min-height: 100vh;
+	padding: 80px 40px;
+	width: 80%;
+}
+ main h2{
+	color: #057a82;
+	font-size: 1.3rem;
+ }
+
+ main > section{
+	 margin-bottom: 80px;
+ }
+
+ main > section h3{
+	 font-size: 1.2rem;
+	 color: #057a82;
+	 margin-bottom: 20px;
+ }
+
+ /* FEATURES ************************************************ */
+#features{
+	margin-top: 40px;
+	padding: 50px 30px;
+	background-color: #eee;
+	/* background-color: #ddd6cd; */
+}
+#features .inner .feature{
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	height: 75px;
+	border-radius: 6px;
+	/* border: 1px solid #ccc; */
+	background-color: #fff;
+	/* background-color: #ebeae6; */
+	overflow: hidden;
+}
+#features .inner .feature .number{
+	align-self: stretch;
+	display: flex;
+	align-items: center;
+	color: #fff;
+}
+#features .inner .feature.brick .number{
+	background-color:firebrick;
+}
+#features .inner .feature.blue .number{
+	background-color: steelblue;
+}
+#features .inner .feature.orange .number{
+	background-color: #f58634;
+}
+#features .inner .feature.green .number{
+	background-color: darkgreen;
+}
+#features .inner .feature .number span{
+	width: 75px;
+	display: block;
+	text-align: center;
+}
+#features .inner .feature .text{
+	display: block;
+	padding: 0 8px;
+	color: #057a82;
+}
+
+
+/* STEPS ************************************************************ */
+
+#steps .inner{
+	margin-top: 30px;
+	padding-left: 10px;
+}
+#steps .inner .step{
+	margin-bottom: 20px;
+	display: flex;
+}
+#steps .inner .step i{
+	margin-top: 5px;
+	margin-right: 8px;
+	color: #f58634;
+}
+
+
+/* TRAINING LEVELS TABLE ************************************************ */
+
+#trainingLevels #trainingLevelsTable thead th{
+	background-color: #f58634 !important;
+}
+#trainingLevels #trainingLevelsTable tr > *{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+
+@media all and (max-width: 991px){	
+	header .text h1{
+		font-size: 1.8rem;
+		margin-bottom: 8px;
+	}
+	header .text .subtitle{
+		font-size: 0.85rem;
+	}
+	header .text .btn{
+		margin-top: 15px;
+	}
+
+	main{
+		padding: 40px 10px;
+		width: 100%;
+	}
+	
+	#features {
+    padding: 30px 15px;
+	}
+	#features .inner .feature .text{
+		font-size: 0.9rem;
+	}
+}
+
+@media all and (max-width: 767px){	
+	header .text{
+		position: static;
+		width: 100%;
+		height: auto;
+		background-color: #eee;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+}
+
+@media all and (max-width: 575px){	
+	header .text{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}

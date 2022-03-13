@@ -1,0 +1,65 @@
+@import url('nav.css');
+@import url('footer.css');
+@import url('call-to-action.css');
+@import url('header.css');
+
+/* MAIN ***************************************************** */
+main{
+	padding: 100px;
+}
+
+main h2{
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #057a82;
+	margin-bottom: 50px;
+}
+
+
+/* CONTACT US FORM ******************************************* */
+#contactUsForm input,
+#contactUsForm textarea{
+	border-radius: 0;
+}
+#contactUsForm textarea{
+	height: 200px;
+}
+#contactUsForm .btn{
+	background-color: #00a859 !important;
+	color: #fff !important;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+
+/* CONTACT US ADDRESS ********************************************* */
+#contactUsAddress .item{
+	margin-bottom: 30px;
+	color: #222;
+}
+#contactUsAddress .item i{
+	margin-right: 10px;
+	font-size: 1.2rem;
+	color: #00a859;
+}
+#contactUsAddress .item > *{
+	line-height: 1.4;
+}
+
+#contactUsAddress .item a{
+	color: #057a82;
+}
+
+
+@media all and (max-width: 991px){
+	main{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+@media all and (max-width: 767px){
+	#contactUsAddress{
+		order: -1;
+	}
+}

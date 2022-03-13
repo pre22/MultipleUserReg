@@ -1,0 +1,200 @@
+/* NAV ********************************************** */
+/* TOP ROW ****************************************** */
+nav#desktopNav .top-row{
+	padding: 0 80px;
+	height: 60px;
+}
+nav#desktopNav #logo{
+	width: 100px;
+}
+nav#desktopNav #logo img{
+	width: 100%;
+}
+nav#desktopNav .top-row .menu a{
+	display: inline-block;
+	text-decoration: none;
+	font-size: 0.8rem;
+	color: #aaaaaa;
+	padding: 0 10px;
+}
+nav#desktopNav .top-row .menu a:hover{
+	color: #00a859;
+}
+nav#desktopNav .top-row .menu a:not(a:last-child){
+	border-right: 1px solid #aaa;
+}
+
+/* MAIN MENU ************************************************* */
+
+nav#desktopNav .main-menu{
+	padding: 0 80px;
+	background-color: #e2e2e2;
+	height: 45px;
+	list-style: none;
+	margin: 0;
+	position: relative;
+}
+nav#desktopNav .main-menu .menu-item > a{	
+	display: inline-block;
+	color: #888;
+	padding-left: 20px;
+	padding-right: 20px;
+	line-height: 45px;
+	font-size: 0.73rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	position: relative;
+}
+nav#desktopNav .main-menu .menu-item:not(.menu-item:first-child){
+	border-left: 1px solid #fff;
+}
+nav#desktopNav .main-menu .menu-item:not(.menu-item:last-child){
+	border-right: 1px solid #ccc;
+}
+nav#desktopNav .main-menu .menu-item.active,
+nav#desktopNav .main-menu .menu-item:hover{
+	/* background-color: #ee7e01; */
+	background-color: #00a859;
+}
+nav#desktopNav .main-menu .menu-item.active > a,
+nav#desktopNav .main-menu .menu-item:hover > a{
+	color: #fff;
+	/* color: #00a859; */
+}
+nav#mobileNav{
+	display: none;
+}
+
+
+/* MENU DROPDOWN ***************************************** */
+nav#desktopNav .main-menu .menu-item.has-dropdown:hover > a::after{
+	content: '';
+	width: 15px;
+	height: 15px;
+	background-color: #00a859;
+	z-index: 1001;
+	position: absolute;
+	bottom: -7.5px;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+}
+nav#desktopNav .main-menu .menu-dropdown{
+	position: absolute;
+	top: 45px;
+	left: 80px;
+	z-index: 1000;
+	background-color: #fff;
+	width: 800px;
+	box-shadow: 0 6px 6px rgba(0,0,0,.4);
+	display: none;
+}
+nav#desktopNav .main-menu .menu-dropdown .dropdown-menu-header{
+	background-color: #f7f7f7;
+	padding: 20px 40px;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: #444;
+	letter-spacing: 0.2px;
+}
+nav#desktopNav .main-menu .menu-dropdown .dropdown-menu-items{
+	list-style: none;	
+	margin: 0;
+	padding: 40px;
+	padding-right: 0;
+	width: 60%;
+}
+nav#desktopNav .main-menu .menu-dropdown .dropdown-menu-items .dropdown-menu-item{
+	margin-bottom: 15px;
+}
+nav#desktopNav .main-menu .menu-dropdown .dropdown-menu-items .dropdown-menu-item a{
+	text-transform: uppercase;
+	color: #888;
+	font-size: 0.83rem;
+}
+nav#desktopNav .main-menu .menu-dropdown .dropdown-menu-items .dropdown-menu-item:hover a{
+	color: #222;
+	font-weight: 600;
+	transition: font-weight .1s, color .1s;
+}
+
+nav#desktopNav .main-menu .menu-dropdown .img-section{
+	background-color: #f7f7f7;
+	width: 40%;
+}
+nav#desktopNav .main-menu .menu-dropdown .img-section img{
+	display: block;
+	-webkit-filter: sepia(40%);
+          filter: sepia(40%);
+}
+nav#desktopNav .main-menu .menu-dropdown .img-section .text{
+	display: block;
+	font-size: 0.85rem;
+	padding: 8px 5px;
+	font-weight: 600;
+}
+
+@media all and (max-width: 991px){
+	/* NAV ********************************************** */
+	/* TOP ROW ****************************************** */
+	nav#desktopNav .top-row{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	/* MAIN MENU ************************************************* */
+	nav#desktopNav .main-menu{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	/* DROPDOWN ************************************************ */	
+	nav#desktopNav .main-menu .menu-dropdown{
+		left: 10px;
+		right: 10px;
+		width: auto;
+	}
+}
+
+@media all and (max-width: 767px){
+
+	/* NAVBAR ************************************************ */
+	nav#desktopNav{
+		display: none;
+	}
+	nav#mobileNav{
+		display: block;
+	}
+	nav#mobileNav .navbar-brand img{
+		width: 130px;
+	}
+	
+	nav#mobileNav #navbarNav{
+		margin-top: 15px;
+	}
+	nav#mobileNav .nav-link{
+		color: #888;
+		font-size: 0.85rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		transition: all .1s;
+	}
+	nav#mobileNav .nav-link.active,
+	nav#mobileNav .nav-link:hover{
+		color: #00a859;
+	}
+
+	nav#mobileNav .divider{
+		display: block;
+		width: 100%;
+		height: 1.5px;
+		background-color: #ccc;
+		margin: 10px 0;
+	}
+
+	nav#mobileNav .menu-item{
+		font-size: 0.8rem;
+		color: #888; 
+		margin-right: 15px;
+	}
+}
